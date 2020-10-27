@@ -1,0 +1,22 @@
+﻿{% load static %}
+<html>
+  <head>
+    <title>PSA - Convert URS</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'psa.ico' %}"/>
+    <link rel="icon" type="image/x-icon" href="{% static 'psa.ico' %}"/>
+  </header>
+  <h1>URS Document Conversion</h1>
+  <p>Upload a DOC or PDF file to be converted to XLSX</p>
+  <br>
+  <br>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input id="uploaded_file" input type="file" name="uploaded_file">
+    <br><br>
+    <button type="submit">Retry Converting!</button>
+  </form>
+  <br><br>
+  <p><b>Sorry, invalid attempt. Please try again.</b>
+  <br><br>
+  <i>Unspecified error... :(</i></p>
+</html>

@@ -1,0 +1,24 @@
+﻿{% load static %}
+<html>
+  <head>
+    <title>PSA - Convert URS</title>
+    <link rel="shortcut icon" type="image/x-icon" href="{% static 'psa.ico' %}"/>
+    <link rel="icon" type="image/x-icon" href="{% static 'psa.ico' %}"/>
+  </head>
+  <h1>URS Document Conversion</h1>
+  <p>Upload a DOC or PDF file to be converted to XLSX</p>
+  <br>
+  <br>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input id="uploaded_file" input type="file" name="uploaded_file">
+    <br><br>
+    <button type="submit">Retry Converting!</button>
+  </form>
+  <br>
+  <p><b>Sorry, invalid file type. Please try again.</b>
+  <br><br>
+  <i>Note: Only text files are supported. (Word DOC, PDF, TXT, etc.)
+  <br>
+  Any other file formats may or may not work properly.</i></p>
+</html>
